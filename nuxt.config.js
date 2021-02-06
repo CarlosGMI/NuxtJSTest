@@ -35,6 +35,8 @@ export default {
     '@nuxtjs/axios',
     // Use global variables on Vue components style tags
     '@nuxtjs/style-resources',
+    // Use environment variables
+    '@nuxtjs/dotenv',
   ],
 
   bootstrapVue: {
