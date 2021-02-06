@@ -1,7 +1,9 @@
+import { resolve } from 'path';
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'ImagenesPorElMundo',
+    title: 'Imagenes del Mundo',
     htmlAttrs: {
       lang: 'en',
     },
@@ -14,7 +16,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['~/assets/styles/scss/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -31,11 +33,15 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    // Use global variables on Vue components style tags
+    '@nuxtjs/style-resources',
   ],
 
   bootstrapVue: {
-    componentPlugins: ['LayoutPlugin'],
-    // components: ['Button'],
+    bootstrapCSS: false,
+    bootstrapVueCSS: false,
+    componentPlugins: ['LayoutPlugin', 'ImagePlugin', 'ModalPlugin'],
+    components: ['BNavbar', 'BNavbarBrand'],
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -45,4 +51,14 @@ export default {
   build: {
     analyze: true,
   },
-}
+
+  styleResources: {
+    scss: ['~assets/styles/scss/_variables.scss'],
+  },
+
+  alias: {
+    component_styles: resolve(__dirname, './assets/styles/scss/components'),
+    page_styles: resolve(__dirname, './assets/styles/scss/pages'),
+    // styles: '~assets/styles/scss',
+  },
+};
