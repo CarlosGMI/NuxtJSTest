@@ -20,6 +20,9 @@ $container-max-widths: (
   xxl: 1410px,
 );
 
+$body-color: $light-gray;
+$headings-color: $main-gray;
+
 // Required
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
