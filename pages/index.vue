@@ -1,7 +1,5 @@
 <template>
-  <b-container>
-    
-  </b-container>
+  <RaceForm />
 </template>
 
 <script>

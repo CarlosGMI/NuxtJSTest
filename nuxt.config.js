@@ -40,7 +40,13 @@ export default {
   bootstrapVue: {
     bootstrapCSS: false,
     bootstrapVueCSS: false,
-    componentPlugins: ['LayoutPlugin', 'ImagePlugin', 'ModalPlugin'],
+    componentPlugins: [
+      'LayoutPlugin',
+      'ImagePlugin',
+      'ButtonPlugin',
+      'ModalPlugin',
+      'FormInputPlugin',
+    ],
     components: ['BNavbar', 'BNavbarBrand'],
   },
 
