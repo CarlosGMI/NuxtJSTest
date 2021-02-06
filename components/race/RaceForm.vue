@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container class="mt-5">
       <b-row class="justify-content-center">
           <b-col sm="5">
               <b-form-input placeholder="Escribe una palabra"></b-form-input>
