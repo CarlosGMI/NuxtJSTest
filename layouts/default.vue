@@ -1,9 +1,7 @@
 <template>
   <div>
     <AppHeader />
+    <AppInstructions />
     <Nuxt />
   </div>
 </template>
-
-<style lang="scss">
-</style>

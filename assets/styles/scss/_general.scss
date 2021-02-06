@@ -1,0 +1,31 @@
+/*
+======================================
+FONTS
+======================================
+*/
+@each $color-name, $value in $colors {
+  .font-#{$color-name} {
+    color: $value;
+  }
+}
+
+/*
+======================================
+GENERAL
+======================================
+*/
+li:focus {
+  outline: none;
+}
+
+// Modal
+.modal-header {
+  button.close {
+    background: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
