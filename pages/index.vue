@@ -1,5 +1,5 @@
 <template>
-  <div class="race-container mt-5" v-if="sellersList.length > 0">
+  <div class="race-container mt-5" v-if="sellersList && sellersList.length > 0">
     <RaceForm />
   </div>
 </template>
@@ -14,21 +14,20 @@ export default {
 
   async mounted() {
     await this.fetchSellersList();
-    console.log(this.sellersList);
   },
 
   computed: {
     ...mapGetters({
-      sellersList: 'sellers/getSellersList'
-    })
+      sellersList: 'sellers/getSellersList',
+    }),
   },
 
   methods: {
     ...mapActions({
-      fetchSellersList: 'sellers/fetchSellersList'
-    })
-  }
-}
+      fetchSellersList: 'sellers/fetchSellersList',
+    }),
+  },
+};
 </script>
 
 <style lang="scss">

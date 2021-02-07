@@ -15,9 +15,9 @@ export const isInLocalStorage = (key) => {
 };
 
 export const saveInLocalStorage = (key, value) => {
-  if (typeof value === 'object' && value) {
+  if (typeof value === 'object' && value != null) {
     localStorage[key] = JSON.stringify(value);
-  } else {
+  } else if (value != null) {
     localStorage[key] = value;
   }
 };

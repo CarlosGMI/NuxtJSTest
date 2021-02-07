@@ -19,7 +19,7 @@ export default {
   css: ['~/assets/styles/scss/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/axios'],
+  plugins: ['~/plugins/axios', '~/plugins/mixins', '~/plugins/repository'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -48,6 +48,7 @@ export default {
       'ButtonPlugin',
       'ModalPlugin',
       'FormInputPlugin',
+      'ToastPlugin',
     ],
     components: ['BNavbar', 'BNavbarBrand'],
   },

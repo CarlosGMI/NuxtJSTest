@@ -1,22 +1,54 @@
 <template>
-  <b-container class="mt-5">
-      <b-row class="justify-content-center">
-          <b-col sm="5">
-              <b-form-input placeholder="Escribe una palabra"></b-form-input>
-          </b-col>
-          <b-col sm="2">
-              <b-button variant="primary">¿Qué hay?</b-button>
-          </b-col>
-      </b-row>
+  <b-container>
+    <b-row class="justify-content-center">
+      <b-col sm="5">
+        <b-form-input
+          v-model="searchTerm"
+          placeholder="Escribe una palabra"
+        ></b-form-input>
+      </b-col>
+      <b-col sm="2">
+        <b-button variant="primary" @click="searchImages">¿Qué hay?</b-button>
+      </b-col>
+    </b-row>
   </b-container>
 </template>
 
 <script>
-export default {
+import { mapActions, mapGetters } from 'vuex';
 
-}
+export default {
+  data() {
+    return {
+      searchTerm: '',
+    };
+  },
+
+  computed: {
+    ...mapGetters({
+      results: 'race/getResults',
+    }),
+  },
+
+  methods: {
+    ...mapActions({
+      fetchResults: 'race/fetchResults',
+    }),
+
+    searchImages() {
+      if (this.isBlankOrEmptyString(this.searchTerm)) {
+        this.makeToast(
+          this,
+          'warning',
+          'Error',
+          'Por favor introduzca una palabra'
+        );
+      } else {
+        this.fetchResults({ searchTerm: this.searchTerm });
+      }
+    },
+  },
+};
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
