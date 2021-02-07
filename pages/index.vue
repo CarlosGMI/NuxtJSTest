@@ -1,5 +1,7 @@
 <template>
-  <RaceForm />
+  <div class="race-container mt-5" v-if="sellersList.length > 0">
+    <RaceForm />
+  </div>
 </template>
 
 <script>
