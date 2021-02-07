@@ -10,7 +10,7 @@ export default {
     return {};
   },
 
-  async created() {
+  async mounted() {
     await this.fetchSellersList();
     console.log(this.sellersList);
   },

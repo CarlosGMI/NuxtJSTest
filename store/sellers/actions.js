@@ -1,5 +1,9 @@
+import { fetchSellers } from '~/services/sellers';
+
 export default {
   async fetchSellersList({ commit }) {
-    commit('SET_SELLERS_LIST', ['v1', 'v2', 'v3']);
+    let sellers = await fetchSellers();
+
+    commit('SET_SELLERS_LIST', sellers.data);
   },
 };
