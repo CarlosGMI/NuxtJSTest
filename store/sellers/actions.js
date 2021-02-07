@@ -1,4 +1,3 @@
-import { fetchSellers } from '~/services/sellers';
 import {
   saveInLocalStorage,
   isInLocalStorage,
@@ -8,7 +7,7 @@ import {
 export default {
   async fetchSellersList({ commit }) {
     if (!isInLocalStorage('sellersList')) {
-      let sellers = await fetchSellers();
+      let sellers = await this.$seller.getSellers();
 
       commit('SET_SELLERS_LIST', sellers.data);
       saveInLocalStorage('sellersList', sellers.data);

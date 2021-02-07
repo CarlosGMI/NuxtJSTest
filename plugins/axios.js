@@ -1,5 +1,5 @@
 export default function ({ $axios }) {
-  $axios.onResponseError((error) => {
+  $axios.onError((error) => {
     if (error.response) {
       console.error(
         `Data: ${error.response.data}\nStatus: ${error.response.status}`
