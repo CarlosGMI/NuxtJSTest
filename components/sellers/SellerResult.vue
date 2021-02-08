@@ -17,5 +17,5 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style src="component_styles/sellers/sellers-results.scss" lang="scss">
 </style>
