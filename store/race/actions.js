@@ -37,5 +37,10 @@ export default {
       saveInLocalStorage('raceVotes', raceVotes);
       commit('SET_VOTE_GRID', raceVotes);
     }
+  },
+
+  changeVotesGrid({ commit, getters }, sellerId) {
+    commit('CHANGE_VOTE_GRID', sellerId);
+    saveInLocalStorage('raceVotes', getters.getVotesGrid);
   }
 };

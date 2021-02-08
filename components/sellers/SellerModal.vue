@@ -7,7 +7,13 @@
     hide-footer
   >
     <div class="text-center">
-      <b-button class="mb-3" variant="primary" size="lg">Votar</b-button>
+      <b-button
+        class="mb-3"
+        variant="primary"
+        size="lg"
+        @click="vote(seller.id)"
+        >Votar</b-button
+      >
     </div>
     <div class="seller-modal-img text-center">
       <b-img fluid :src="seller.image.landscape"></b-img>
@@ -16,7 +22,20 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
+  methods: {
+    ...mapActions({
+      changeVotes: 'race/changeVotesGrid',
+    }),
+
+    vote(sellerId) {
+      this.changeVotes(sellerId);
+      this.$bvModal.hide(`seller-modal-${sellerId}`);
+    },
+  },
+
   props: ['seller'],
 };
 </script>

@@ -12,6 +12,13 @@ export default {
   },
 
   SET_VOTE_GRID(state, grid) {
-    state.grid = grid;
+    state.votesGrid = grid;
+  },
+
+  CHANGE_VOTE_GRID(state, sellerId) {
+    let votesGrid = state.votesGrid;
+
+    votesGrid[sellerId]++;
+    state.votesGrid = votesGrid;
   }
 };
