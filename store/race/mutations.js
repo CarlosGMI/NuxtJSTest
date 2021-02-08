@@ -11,7 +11,7 @@ export default {
     state.raceStarted = raceStarted;
   },
 
-  SET_GRID(state, grid) {
+  SET_VOTE_GRID(state, grid) {
     state.grid = grid;
   }
 };

@@ -23,19 +23,19 @@ export default {
     }
   },
 
-  buildInitialGrid({ commit, rootGetters }) {
-    let raceGrid = {};
+  buildInitialVotesGrid({ commit, rootGetters }) {
+    let raceVotes = {};
     let sellers = rootGetters['sellers/getSellersList'];
 
-    if (isInLocalStorage('raceGrid')) {
-      raceGrid = getFromLocalStorage('raceGrid');
+    if (isInLocalStorage('raceVotes')) {
+      raceVotes = getFromLocalStorage('raceVotes');
 
-      commit('SET_GRID', JSON.parse(raceGrid));
+      commit('SET_VOTE_GRID', JSON.parse(raceVotes));
     } else {
-      raceGrid = buildGrid(sellers);
+      raceVotes = buildGrid(sellers);
 
-      saveInLocalStorage('raceGrid', raceGrid);
-      commit('SET_GRID', raceGrid);
+      saveInLocalStorage('raceVotes', raceVotes);
+      commit('SET_VOTE_GRID', raceVotes);
     }
   }
 };

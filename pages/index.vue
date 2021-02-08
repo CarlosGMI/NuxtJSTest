@@ -15,7 +15,7 @@ export default {
 
   async mounted() {
     await this.fetchSellersList();
-    this.buildRaceGrid();
+    this.buildVotesGrid();
   },
 
   computed: {
@@ -27,7 +27,7 @@ export default {
   methods: {
     ...mapActions({
       fetchSellersList: 'sellers/fetchSellersList',
-      buildRaceGrid: 'race/buildInitialGrid',
+      buildVotesGrid: 'race/buildInitialVotesGrid',
     }),
   },
 };
