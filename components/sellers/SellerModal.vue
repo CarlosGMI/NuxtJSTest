@@ -11,7 +11,7 @@
         class="mb-3"
         variant="primary"
         size="lg"
-        @click="vote(seller.id)"
+        @click="vote(seller.id, seller.name)"
         >Votar</b-button
       >
     </div>
@@ -30,9 +30,15 @@ export default {
       changeVotes: 'race/changeVotesGrid',
     }),
 
-    vote(sellerId) {
+    vote(sellerId, sellerName) {
       this.changeVotes(sellerId);
       this.$bvModal.hide(`seller-modal-${sellerId}`);
+      this.makeToast(
+        this,
+        'success',
+        '¡Muchas gracias!',
+        `Su voto a ${sellerName} ha sido procesado con éxito`
+      );
     },
   },
 
