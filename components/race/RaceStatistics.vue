@@ -13,6 +13,7 @@ export default {
   computed: {
     ...mapGetters({
       votes: 'race/getVotesGrid',
+      raceGrid: 'race/getRaceGrid',
     }),
   },
 
@@ -26,7 +27,8 @@ export default {
     votes: {
       deep: true,
       handler: function (votesGrid) {
-        console.log(`I just voted`);
+        this.buildRaceGrid();
+        console.log(this.raceGrid);
       },
     },
   },

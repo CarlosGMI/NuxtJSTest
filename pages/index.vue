@@ -23,6 +23,7 @@ export default {
     ...mapGetters({
       sellersList: 'sellers/getSellersList',
       votesGrid: 'race/getVotesGrid',
+      isRaceFinished: 'race/getRaceFinished',
     }),
   },
 
@@ -31,6 +32,17 @@ export default {
       fetchSellersList: 'sellers/fetchSellersList',
       buildVotesGrid: 'race/buildInitialVotesGrid',
     }),
+  },
+
+  watch: {
+    isRaceFinished() {
+      this.makeToast(
+        this,
+        'success',
+        '¡Muchísimas gracias!',
+        'Con tu ayuda la carrera ha finalizado y ya tenemos un ganador'
+      );
+    },
   },
 };
 </script>

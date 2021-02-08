@@ -32,6 +32,7 @@ export const buildRaceGrid = (sellers, votes) => {
     for (let seller of sellers) {
         let sellerVotes = votes[seller.id];
         let sellerInRace = {
+            id: seller.id,
             name: seller.name,
             points: calculatePoints(sellerVotes),
             pointsToWin: calculateRemainingPoints(sellerVotes)

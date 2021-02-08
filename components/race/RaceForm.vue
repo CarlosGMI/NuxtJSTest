@@ -8,20 +8,31 @@
         ></b-form-input>
       </b-col>
       <b-col sm="2" class="text-center text-sm-left mt-3 mt-sm-0">
-        <b-button variant="primary" @click="searchImages">¿Qué hay?</b-button>
+        <b-button
+          variant="primary"
+          @click="searchImages"
+          :disabled="isRaceFinished"
+          >¿Qué hay?</b-button
+        >
       </b-col>
     </b-row>
   </b-container>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   data() {
     return {
       searchTerm: '',
     };
+  },
+
+  computed: {
+    ...mapGetters({
+      isRaceFinished: 'race/getRaceFinished',
+    }),
   },
 
   methods: {

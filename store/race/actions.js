@@ -44,20 +44,22 @@ export default {
     saveInLocalStorage('raceVotes', getters.getVotesGrid);
   },
 
-  buildRaceGrid({ commit, getters, rootGetters }) {
+  buildRaceGrid({ commit, getters, rootGetters, dispatch }) {
     let raceGrid = [];
+    let sellers = rootGetters['sellers/getSellersList'];
+    let votes = getters.getVotesGrid;
+    raceGrid = buildRaceGrid(sellers, votes);
 
-    if (isInLocalStorage('raceGrid')) {
-      raceGrid = getFromLocalStorage('raceGrid');
-
-      commit('SET_RACE_GRID', JSON.parse(raceGrid));
-    } else {
-      let sellers = rootGetters['sellers/getSellersList'];
-      let votes = getters.getVotesGrid;
-      raceGrid = buildRaceGrid(sellers, votes);
-
-      saveInLocalStorage('raceGrid', raceGrid);
-      commit('SET_RACE_GRID', raceGrid);
-    }
+    commit('SET_RACE_GRID', raceGrid);
+    dispatch('isThereAWinner');
   },
+
+  isThereAWinner({ commit, getters }) {
+    let raceGrid = getters.getRaceGrid;
+    let winningSeller = raceGrid[0];
+
+    if (winningSeller.points >= process.env.RACE_TOTAL_POINTS) {
+      commit('SET_RACE_FINISHED', true);
+    }
+  }
 };

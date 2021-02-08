@@ -4,4 +4,5 @@ export default {
   getRaceStarted: (state) => state.raceStarted,
   getVotesGrid: (state) => state.votesGrid,
   getRaceGrid: (state) => state.raceGrid,
+  getRaceFinished: (state) => state.raceFinished,
 };

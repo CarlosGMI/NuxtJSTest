@@ -24,5 +24,9 @@ export default {
 
   SET_RACE_GRID(state, raceGrid) {
     state.raceGrid = raceGrid;
-  }
+  },
+
+  SET_RACE_FINISHED(state, finished) {
+    state.raceFinished = finished;
+  },
 };
