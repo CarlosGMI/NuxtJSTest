@@ -1,5 +1,5 @@
-import { buildResults } from '~/services/race';
-import { saveInLocalStorage, getFromLocalStorage } from '~/services/utils';
+import { buildResults, buildGrid } from '~/services/race';
+import { saveInLocalStorage, getFromLocalStorage, isInLocalStorage } from '~/services/utils';
 
 export default {
   async fetchResults({ commit, rootGetters }, { searchTerm }) {
@@ -23,7 +23,19 @@ export default {
     }
   },
 
-  buildGrid({ commit, rootGetters }) {
-    console.log('Building race grid...');
+  buildInitialGrid({ commit, rootGetters }) {
+    let raceGrid = {};
+    let sellers = rootGetters['sellers/getSellersList'];
+
+    if (isInLocalStorage('raceGrid')) {
+      raceGrid = getFromLocalStorage('raceGrid');
+
+      commit('SET_GRID', JSON.parse(raceGrid));
+    } else {
+      raceGrid = buildGrid(sellers);
+
+      saveInLocalStorage('raceGrid', raceGrid);
+      commit('SET_GRID', raceGrid);
+    }
   }
 };

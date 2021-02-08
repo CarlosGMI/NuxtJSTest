@@ -27,7 +27,7 @@ export default {
   methods: {
     ...mapActions({
       fetchSellersList: 'sellers/fetchSellersList',
-      buildRaceGrid: 'race/buildGrid',
+      buildRaceGrid: 'race/buildInitialGrid',
     }),
   },
 };

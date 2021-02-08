@@ -15,3 +15,13 @@ export const buildResults = (images, sellers) => {
 
     return results;
 }
+
+export const buildGrid = (sellers) => {
+    let grid = {};
+
+    for (let seller of sellers) {
+        grid[seller.id] = 0;
+    }
+
+    return grid;
+}
