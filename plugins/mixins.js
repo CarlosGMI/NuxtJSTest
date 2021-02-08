@@ -8,12 +8,16 @@ Vue.mixin({
 
         makeToast(vueInstance, variant = null, title = "", content = "") {
             vueInstance.$root.$bvToast.toast(content, {
-              title,
-              variant,
-              solid: true,
-              toaster: 'b-toaster-bottom-right',
-              appendToast: true
+                title,
+                variant,
+                solid: true,
+                toaster: 'b-toaster-bottom-right',
+                appendToast: true
             });
-        }
+        },
+
+        isEmptyObject(obj) {
+            return Object.keys(obj).length === 0;
+        },
     }
 })

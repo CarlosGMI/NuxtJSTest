@@ -20,5 +20,9 @@ export default {
 
     votesGrid[sellerId]++;
     state.votesGrid = votesGrid;
+  },
+
+  SET_RACE_GRID(state, raceGrid) {
+    state.raceGrid = raceGrid;
   }
 };

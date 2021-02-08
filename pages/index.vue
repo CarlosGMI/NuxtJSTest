@@ -2,6 +2,7 @@
   <div class="race-container mt-5" v-if="sellersList && sellersList.length > 0">
     <RaceForm />
     <RaceResults />
+    <RaceStatistics v-if="!isEmptyObject(votesGrid)" />
   </div>
 </template>
 
@@ -21,6 +22,7 @@ export default {
   computed: {
     ...mapGetters({
       sellersList: 'sellers/getSellersList',
+      votesGrid: 'race/getVotesGrid',
     }),
   },
 

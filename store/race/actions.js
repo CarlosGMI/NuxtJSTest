@@ -1,4 +1,4 @@
-import { buildResults, buildGrid } from '~/services/race';
+import { buildResults, buildGrid, buildRaceGrid } from '~/services/race';
 import { saveInLocalStorage, getFromLocalStorage, isInLocalStorage } from '~/services/utils';
 
 export default {
@@ -42,5 +42,22 @@ export default {
   changeVotesGrid({ commit, getters }, sellerId) {
     commit('CHANGE_VOTE_GRID', sellerId);
     saveInLocalStorage('raceVotes', getters.getVotesGrid);
-  }
+  },
+
+  buildInitialRaceGrid({ commit, getters, rootGetters }) {
+    let raceGrid = [];
+
+    if (isInLocalStorage('raceGrid')) {
+      raceGrid = getFromLocalStorage('raceGrid');
+
+      commit('SET_RACE_GRID', JSON.parse(raceGrid));
+    } else {
+      let sellers = rootGetters['sellers/getSellersList'];
+      let votes = getters.getVotesGrid;
+      raceGrid = buildRaceGrid(sellers, votes);
+
+      saveInLocalStorage('raceGrid', raceGrid);
+      commit('SET_RACE_GRID', raceGrid);
+    }
+  },
 };

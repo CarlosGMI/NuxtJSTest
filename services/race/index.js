@@ -25,3 +25,34 @@ export const buildGrid = (sellers) => {
 
     return grid;
 }
+
+export const buildRaceGrid = (sellers, votes) => {
+    let raceGrid = [];
+
+    for (let seller of sellers) {
+        let sellerVotes = votes[seller.id];
+        let sellerInRace = {
+            name: seller.name,
+            points: calculatePoints(sellerVotes),
+            pointsToWin: calculateRemainingPoints(sellerVotes)
+        }
+
+        raceGrid.push(sellerInRace);
+    }
+
+    return sortPositions(raceGrid);
+}
+
+function calculatePoints(votes) {
+    return votes * process.env.RACE_VOTE_POINTS;
+}
+
+function calculateRemainingPoints(votes) {
+    return process.env.RACE_TOTAL_POINTS - (votes * process.env.RACE_VOTE_POINTS);
+}
+
+function sortPositions(raceGrid) {
+    return raceGrid.sort((a, b) => {
+        return b.points - a.points;
+    });
+}

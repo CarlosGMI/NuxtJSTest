@@ -3,4 +3,5 @@ export default () => ({
   searchingResults: false,
   raceStarted: false,
   votesGrid: {},
+  raceGrid: [],
 });
