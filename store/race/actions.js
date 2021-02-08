@@ -11,10 +11,10 @@ export default {
     if (sellers && sellers.length > 0) {
       // let images = await this.$race.getResults({ query: searchTerm, per_page: sellers.length });
       // Delete from here
-      // saveInLocalStorage('images', images.data.photos);
+      // let results = buildResults(images.data.photos, sellers);
+      // saveInLocalStorage('images', results);
       let lala = getFromLocalStorage('images');
-      let results = buildResults(JSON.parse(lala), sellers);
-      commit('SET_RESULTS', results);
+      commit('SET_RESULTS', JSON.parse(lala));
       // Delete end
       // let results = buildResults(images.data.photos, sellers);
 
