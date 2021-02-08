@@ -1,5 +1,6 @@
 export default () => ({
   results: [],
   searchingResults: false,
-  raceStarted: false
+  raceStarted: false,
+  grid: {},
 });

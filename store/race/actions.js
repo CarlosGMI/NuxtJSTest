@@ -22,4 +22,8 @@ export default {
       commit('SET_SEARCHING_RESULTS', false);
     }
   },
+
+  buildGrid({ commit, rootGetters }) {
+    console.log('Building race grid...');
+  }
 };

@@ -9,5 +9,9 @@ export default {
 
   SET_RACE_STARTED(state, raceStarted) {
     state.raceStarted = raceStarted;
+  },
+
+  SET_GRID(state, grid) {
+    state.grid = grid;
   }
 };
