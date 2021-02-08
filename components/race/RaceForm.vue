@@ -7,7 +7,7 @@
           placeholder="Escribe una palabra"
         ></b-form-input>
       </b-col>
-      <b-col sm="2">
+      <b-col sm="2" class="text-center text-sm-left mt-3 mt-sm-0">
         <b-button variant="primary" @click="searchImages">¿Qué hay?</b-button>
       </b-col>
     </b-row>

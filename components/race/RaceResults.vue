@@ -2,7 +2,9 @@
   <b-container class="race-results-container mt-5">
     <RaceLoading v-if="searchingResults" />
     <RaceImages v-if="!searchingResults && results.length > 0" />
-    <RaceNoResults v-if="raceStarted && results.length === 0" />
+    <RaceNoResults
+      v-if="raceStarted && results.length === 0 && !searchingResults"
+    />
   </b-container>
 </template>
 
