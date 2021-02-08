@@ -15,19 +15,13 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
   data() {
     return {
       searchTerm: '',
     };
-  },
-
-  computed: {
-    ...mapGetters({
-      results: 'race/getResults',
-    }),
   },
 
   methods: {

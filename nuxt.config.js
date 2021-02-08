@@ -49,6 +49,7 @@ export default {
       'ModalPlugin',
       'FormInputPlugin',
       'ToastPlugin',
+      'SpinnerPlugin'
     ],
     components: ['BNavbar', 'BNavbarBrand'],
   },
