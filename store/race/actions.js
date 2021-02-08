@@ -44,7 +44,7 @@ export default {
     saveInLocalStorage('raceVotes', getters.getVotesGrid);
   },
 
-  buildInitialRaceGrid({ commit, getters, rootGetters }) {
+  buildRaceGrid({ commit, getters, rootGetters }) {
     let raceGrid = [];
 
     if (isInLocalStorage('raceGrid')) {

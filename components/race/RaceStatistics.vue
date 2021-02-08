@@ -11,13 +11,24 @@ export default {
   },
 
   computed: {
-    ...mapGetters({}),
+    ...mapGetters({
+      votes: 'race/getVotesGrid',
+    }),
   },
 
   methods: {
     ...mapActions({
-      buildRaceGrid: 'race/buildInitialRaceGrid',
+      buildRaceGrid: 'race/buildRaceGrid',
     }),
+  },
+
+  watch: {
+    votes: {
+      deep: true,
+      handler: function (votesGrid) {
+        console.log(`I just voted`);
+      },
+    },
   },
 };
 </script>
