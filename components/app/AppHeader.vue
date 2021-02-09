@@ -8,8 +8,14 @@
           </b-navbar-brand>
         </b-col>
         <b-col cols="7" sm="10">
-          <ul class="header-menu list-unstyled d-flex align-items-center m-0 h-100 pl-4">
-            <li id="instructions-modal-opener" v-b-modal.instructions-modal class="text-uppercase font-main-gray">
+          <ul
+            class="header-menu list-unstyled d-flex align-items-center m-0 h-100 pl-4"
+          >
+            <li
+              id="instructions-modal-opener"
+              v-b-modal.instructions-modal
+              class="text-uppercase font-main-gray"
+            >
               Intrucciones
             </li>
           </ul>
@@ -20,6 +26,12 @@
 </template>
 
 <script>
+/**
+ * The Header component.
+ *
+ * This component includes a menu item which calls a modal for the race instructions
+ * @see AppInstructions
+ */
 export default {};
 </script>
 

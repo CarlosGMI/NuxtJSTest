@@ -25,6 +25,15 @@
 <script>
 import { mapGetters } from 'vuex';
 
+/**
+ * The component that shows the final results when the race is finished.
+ *
+ * This component includes the information for the winner Seller of the race which is obtained from the first element of
+ * the raceGrid array. This component also renders a button that opens a modal with the invoice information of the winner.
+ * This modal is only rendered if the Alegra API finished creating the invoice (@see creatingInvoice getter).
+ *
+ * @requires ./RaceForm
+ */
 export default {
   computed: {
     ...mapGetters({
@@ -34,6 +43,9 @@ export default {
   },
 
   methods: {
+    /**
+     * Restart the web app (JUST FOR DEVELOPMENT AND EVALUATION PROCESS FROM THE ALEGRA TEAM).
+     */
     restartRace() {
       // I know this is ugly but is only a feature to restart the race and only for development and evaluation purposes
       localStorage.clear();

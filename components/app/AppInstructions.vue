@@ -45,6 +45,12 @@
 </template>
 
 <script>
+/**
+ * The modal for the race instructions
+ *
+ * This component contains information regarding how to use the web app. Is a Bootstrap modal that is opened when the instructions
+ * menu item in the Header component (@see AppHeader ) is clicked.
+ */
 export default {};
 </script>
 

@@ -16,6 +16,16 @@
 <script>
 import { mapGetters } from 'vuex';
 
+/**
+ * The images results component.
+ *
+ * This component includes all the required components to give the user a nice UX regarding the results for the word that the
+ * user entered in the form (@see RaceForm ). We can present the user a screen with all the results (@see RaceImages ), a screen
+ * when no results are found (@see RaceNoResults ), a screen while getting the images for the API (@see RaceLoading ), and finally
+ * a screen presenting the final results when the race is finished (@see RaceResultsFinal ).
+ *
+ * @requires ./RaceForm
+ */
 export default {
   computed: {
     ...mapGetters({

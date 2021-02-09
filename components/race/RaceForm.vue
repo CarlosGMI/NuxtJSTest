@@ -22,6 +22,13 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 
+/**
+ * The form for images search component.
+ *
+ * This component contains the input and the button that a user needs to search for a word and present his/her with images related
+ * with the search term (the word).
+ * The button is disabled when the race is finished.
+ */
 export default {
   data() {
     return {
@@ -40,6 +47,9 @@ export default {
       fetchResults: 'race/fetchResults',
     }),
 
+    /**
+     * Make a notification if the user enters a blank or empty string. If not, get the images from the searched term (word).
+     */
     searchImages() {
       if (this.isBlankOrEmptyString(this.searchTerm)) {
         this.makeToast(

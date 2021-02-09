@@ -12,6 +12,15 @@
 <script>
 import { mapGetters } from 'vuex';
 
+/**
+ * The results component.
+ *
+ * This component contains the results (images) for the text (word) entered by the user in the form (@see RaceForm ). For each
+ * result fetched we call another component from the Seller module (@see SellerResult ).
+ *
+ * @requires ./RaceResults
+ * @requires ../sellers/SellerModal
+ */
 export default {
   computed: {
     ...mapGetters({

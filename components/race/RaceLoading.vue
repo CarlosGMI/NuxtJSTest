@@ -6,6 +6,14 @@
 </template>
 
 <script>
+/**
+ * The component when the images (results) are still being fetched from the API.
+ *
+ * This component includes a loader (spinner) from Bootstrap.
+ *
+ * @requires ./RaceResults
+ * @requires SpinnerPlugin (BSpinner)
+ */
 export default {};
 </script>
 

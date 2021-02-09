@@ -17,6 +17,13 @@
 <script>
 import { mapGetters } from 'vuex';
 
+/**
+ * The modal with the invoice information component.
+ *
+ * This component contains all the invoice information from the race winner by passing props.
+ *
+ * @requires ../race/RaceResultsFinal
+ */
 export default {
   data() {
     return {

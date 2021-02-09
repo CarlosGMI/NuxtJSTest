@@ -27,7 +27,17 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 
+/**
+ * The race statistics component.
+ *
+ * This component contains all the statistics for the race. For each seller placed or sorted in the race grid we render its
+ * position on the grid (1st, 2nd, etc.), its points and remaining points to win, and an icon. All of this is wrapped by a
+ * transition-group that gives the raceGrid list an animation when a Seller ranks up or down a position.
+ */
 export default {
+  /**
+   * Build the race grid list (the Seller positions in the race).
+   */
   mounted() {
     this.buildRaceGrid();
   },
@@ -50,6 +60,10 @@ export default {
   },
 
   watch: {
+    /**
+     * Every time the votes grid changes (the user voted for a Seller) we need to re-build the race grid because we have to
+     * know the Sellers rankings.
+     */
     votes: {
       deep: true,
       handler: function (votesGrid) {

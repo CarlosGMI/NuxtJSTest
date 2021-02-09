@@ -15,6 +15,11 @@ export default {
     state.votesGrid = grid;
   },
 
+  /**
+   * To the given Seller ID we increment by one the vote from the votes grid.
+   * 
+   * @param {*} sellerId The Seller ID to which we will update the vote
+   */
   CHANGE_VOTE_GRID(state, sellerId) {
     let votesGrid = state.votesGrid;
 

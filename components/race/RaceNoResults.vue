@@ -8,6 +8,14 @@
 </template>
 
 <script>
+/**
+ * The component for when there are no results from the API.
+ *
+ * This component includes the text for when the API returned no results for the text (word) entered by the user in the form
+ * (@see RaceForm ).
+ *
+ * @requires ./RaceResults
+ */
 export default {};
 </script>
 

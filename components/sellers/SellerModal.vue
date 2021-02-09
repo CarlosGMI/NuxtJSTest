@@ -26,12 +26,24 @@
 <script>
 import { mapActions } from 'vuex';
 
+/**
+ * The modal for the single result of all the results rendered in RaceResults (@see RaceResults ).
+ *
+ * This component includes a Bootstrap modal that renders the landscape image associated to a single Seller (result) passed
+ * by props. In addition to that, this component renders a button for the user to click and vote for that Seller.
+ *
+ * @requires ./SellerResult
+ */
 export default {
   methods: {
     ...mapActions({
       changeVotes: 'race/changeVotesGrid',
     }),
 
+    /**
+     * When the user clicks the "Vote" button we dispatch the votation method, we hide the modal and render a notification to
+     * the user that his/her vote was successful.
+     */
     vote(sellerId, sellerName) {
       this.changeVotes(sellerId);
       this.$bvModal.hide(`seller-modal-${sellerId}`);

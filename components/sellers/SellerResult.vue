@@ -12,6 +12,15 @@
 </template>
 
 <script>
+/**
+ * The component for the single result of all the results rendered in RaceResults (@see RaceResults ).
+ *
+ * This component includes the individual information for every result that gets passed by props. This component renders the
+ * Seller name and the medium sized image associated to that Seller. At the same time, when clicking the image we can get a modal
+ * with the image in landscape mode and the "vote" button (@see SellerModal ).
+ *
+ * @requires ../race/RaceImages
+ */
 export default {
   props: ['result'],
 };
