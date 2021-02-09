@@ -16,7 +16,9 @@
       >
     </div>
     <div class="seller-modal-img text-center">
-      <b-img fluid :src="seller.image.landscape"></b-img>
+      <a :href="seller.image.original" target="_blank" style="cursor: pointer">
+        <b-img fluid :src="seller.image.landscape"></b-img>
+      </a>
     </div>
   </b-modal>
 </template>
