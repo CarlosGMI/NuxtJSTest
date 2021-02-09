@@ -11,7 +11,7 @@ Vue.mixin({
                 title,
                 variant,
                 solid: true,
-                toaster: 'b-toaster-bottom-right',
+                toaster: 'b-toaster-top-right',
                 appendToast: true
             });
         },

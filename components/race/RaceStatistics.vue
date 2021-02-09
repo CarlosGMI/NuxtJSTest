@@ -54,7 +54,6 @@ export default {
       deep: true,
       handler: function (votesGrid) {
         this.buildRaceGrid();
-        console.log(this.raceGrid);
       },
     },
   },
