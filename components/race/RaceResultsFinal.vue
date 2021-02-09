@@ -15,6 +15,8 @@
         v-else
         >Ver factura</b-button
       >
+      <p class="mt-4"><i>Just for the evaluation team at Alegra...</i></p>
+      <b-button variant="primary" @click="restartRace">Restart race</b-button>
     </div>
     <InvoiceModal :seller="raceGrid[0]" />
   </div>
@@ -29,6 +31,14 @@ export default {
       raceGrid: 'race/getRaceGrid',
       creatingInvoice: 'invoices/getCreatingInvoice',
     }),
+  },
+
+  methods: {
+    restartRace() {
+      // I know this is ugly but is only a feature to restart the race and only for development and evaluation purposes
+      localStorage.clear();
+      location.reload();
+    },
   },
 };
 </script>
