@@ -72,11 +72,11 @@ export const buildRaceGrid = (sellers, votes) => {
 }
 
 function calculatePoints(votes) {
-    return votes * process.env.RACE_VOTE_POINTS;
+    return votes * process.env.NUXT_ENV_RACE_VOTE_POINTS;
 }
 
 function calculateRemainingPoints(votes) {
-    return process.env.RACE_TOTAL_POINTS - (votes * process.env.RACE_VOTE_POINTS);
+    return process.env.NUXT_ENV_RACE_TOTAL_POINTS - (votes * process.env.NUXT_ENV_RACE_VOTE_POINTS);
 }
 
 function sortPositions(raceGrid) {

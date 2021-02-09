@@ -79,7 +79,7 @@ export default {
     let raceGrid = getters.getRaceGrid;
     let winningSeller = raceGrid[0];
 
-    if (winningSeller.points >= process.env.RACE_TOTAL_POINTS) {
+    if (winningSeller.points >= process.env.NUXT_ENV_RACE_TOTAL_POINTS) {
       commit('SET_RACE_FINISHED', true);
       dispatch('invoices/createInvoice', winningSeller.id, { root: true });
     }

@@ -1,6 +1,6 @@
 export const alegraOptions = () => {
   let base64Auth = btoa(
-    `${process.env.ALEGRA_EMAIL}:${process.env.ALEGRA_API_KEY}`
+    `${process.env.NUXT_ENV_ALEGRA_EMAIL}:${process.env.NUXT_ENV_ALEGRA_API_KEY}`
   );
 
   return {
@@ -9,15 +9,15 @@ export const alegraOptions = () => {
       'Content-Type': 'application/json',
       Authorization: `Basic ${base64Auth}`,
     },
-    baseURL: process.env.ALEGRA_API_URL
+    baseURL: process.env.NUXT_ENV_ALEGRA_API_URL
   };
 };
 
 export const imagesOptions = () => {
   return {
     headers: {
-      Authorization: process.env.PEXELS_API_KEY
+      Authorization: process.env.NUXT_ENV_PEXELS_API_KEY
     },
-    baseURL: process.env.PEXELS_API_URL,
+    baseURL: process.env.NUXT_ENV_PEXELS_API_URL,
   };
 }
