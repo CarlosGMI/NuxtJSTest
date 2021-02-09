@@ -51,7 +51,7 @@ export default {
       'ToastPlugin',
       'SpinnerPlugin'
     ],
-    components: ['BNavbar', 'BNavbarBrand'],
+    components: ['BNavbar', 'BNavbarBrand', 'BTable'],
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

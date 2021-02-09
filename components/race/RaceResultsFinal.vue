@@ -8,8 +8,15 @@
         <p>Creando factura...</p>
         <b-spinner variant="primary" label="Loading"></b-spinner>
       </div>
-      <b-button class="mt-4" variant="primary" v-else>Ver factura</b-button>
+      <b-button
+        class="mt-4"
+        variant="primary"
+        v-b-modal="'invoice-modal'"
+        v-else
+        >Ver factura</b-button
+      >
     </div>
+    <InvoiceModal :seller="raceGrid[0]" />
   </div>
 </template>
 
