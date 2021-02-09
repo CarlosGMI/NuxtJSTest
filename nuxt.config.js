@@ -58,9 +58,7 @@ export default {
   axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    analyze: true,
-  },
+  build: {},
 
   styleResources: {
     scss: ['~assets/styles/scss/_variables.scss'],
