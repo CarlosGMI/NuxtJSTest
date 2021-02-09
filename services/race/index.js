@@ -19,13 +19,6 @@ export const buildResults = (images, sellers) => {
 }
 
 export const buildGrid = (sellers, votesGridFromStorage = null) => {
-    // let grid = {};
-
-    // for (let seller of sellers) {
-    //     grid[seller.id] = 0;
-    // }
-
-    // return grid;
     let grid = {};
 
     for (let seller of sellers) {

@@ -33,17 +33,6 @@ export default {
       saveInLocalStorage('raceVotes', raceVotes);
       commit('SET_VOTE_GRID', raceVotes);
     }
-
-    // if (isInLocalStorage('raceVotes')) {
-    //   raceVotes = getFromLocalStorage('raceVotes');
-
-    //   commit('SET_VOTE_GRID', JSON.parse(raceVotes));
-    // } else {
-    //   raceVotes = buildGrid(sellers);
-
-    //   saveInLocalStorage('raceVotes', raceVotes);
-    //   commit('SET_VOTE_GRID', raceVotes);
-    // }
   },
 
   changeVotesGrid({ commit, getters }, sellerId) {
