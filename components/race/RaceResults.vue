@@ -8,7 +8,7 @@
       />
     </div>
     <div class="race-finished" v-else>
-      <h2>Race finished...</h2>
+      <RaceResultsFinal />
     </div>
   </b-container>
 </template>
