@@ -1,0 +1,25 @@
+.race-statistics-container {
+  bottom: 0;
+  position: fixed;
+  //   overflow-x: scroll;
+
+  .race-grid {
+    display: flex;
+    flex-direction: row-reverse;
+    // justify-content: center;
+    overflow-x: auto;
+  }
+
+  .race-grid-item {
+    display: inline-block;
+    flex-shrink: 0;
+    margin: 0 4rem;
+    transition: all 1s ease;
+  }
+
+  .race-grid-item__content {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr max-content max-content;
+    justify-items: center;
+  }
+}

@@ -7,6 +7,10 @@ FONTS
   .font-#{$color-name} {
     color: $value;
   }
+
+  .bg-#{$color-name} {
+    background-color: $value;
+  }
 }
 
 span.highlight {
