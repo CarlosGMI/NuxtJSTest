@@ -1,26 +1,37 @@
 export const buildResults = (images, sellers) => {
     let results = [];
 
-    for (let i = 0; i < sellers.length; i++) {
-        results.push({
-            id: sellers[i].id,
-            name: sellers[i].name,
-            image: {
-                medium: images[i].src.medium,
-                landscape: images[i].src.landscape,
-                original: images[i].src.original
-            }
-        })
+    if (images.length > 0) {
+        for (let i = 0; i < sellers.length; i++) {
+            results.push({
+                id: sellers[i].id,
+                name: sellers[i].name,
+                image: {
+                    medium: images[i].src.medium,
+                    landscape: images[i].src.landscape,
+                    original: images[i].src.original
+                }
+            })
+        }
     }
 
     return results;
 }
 
-export const buildGrid = (sellers) => {
+export const buildGrid = (sellers, votesGridFromStorage = null) => {
+    // let grid = {};
+
+    // for (let seller of sellers) {
+    //     grid[seller.id] = 0;
+    // }
+
+    // return grid;
     let grid = {};
 
     for (let seller of sellers) {
-        grid[seller.id] = 0;
+        let sellerExistsInVoteGrid = votesGridFromStorage && votesGridFromStorage[seller.id];
+
+        grid[seller.id] = sellerExistsInVoteGrid ? votesGridFromStorage[seller.id] : 0;
     }
 
     return grid;

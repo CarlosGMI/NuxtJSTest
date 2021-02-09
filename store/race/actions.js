@@ -10,12 +10,6 @@ export default {
 
     if (sellers && sellers.length > 0) {
       let images = await this.$race.getResults({ query: searchTerm, per_page: sellers.length });
-      // Delete from here
-      // let results = buildResults(images.data.photos, sellers);
-      // saveInLocalStorage('images', results);
-      // let lala = getFromLocalStorage('images');
-      // commit('SET_RESULTS', JSON.parse(lala));
-      // Delete end
       let results = buildResults(images.data.photos, sellers);
 
       commit('SET_RESULTS', results);
@@ -28,15 +22,28 @@ export default {
     let sellers = rootGetters['sellers/getSellersList'];
 
     if (isInLocalStorage('raceVotes')) {
-      raceVotes = getFromLocalStorage('raceVotes');
+      let raceVotesFromStorage = getFromLocalStorage('raceVotes');
+      raceVotes = buildGrid(sellers, JSON.parse(raceVotesFromStorage));
 
-      commit('SET_VOTE_GRID', JSON.parse(raceVotes));
+      saveInLocalStorage('raceVotes', raceVotes);
+      commit('SET_VOTE_GRID', raceVotes);
     } else {
       raceVotes = buildGrid(sellers);
 
       saveInLocalStorage('raceVotes', raceVotes);
       commit('SET_VOTE_GRID', raceVotes);
     }
+
+    // if (isInLocalStorage('raceVotes')) {
+    //   raceVotes = getFromLocalStorage('raceVotes');
+
+    //   commit('SET_VOTE_GRID', JSON.parse(raceVotes));
+    // } else {
+    //   raceVotes = buildGrid(sellers);
+
+    //   saveInLocalStorage('raceVotes', raceVotes);
+    //   commit('SET_VOTE_GRID', raceVotes);
+    // }
   },
 
   changeVotesGrid({ commit, getters }, sellerId) {

@@ -18,7 +18,7 @@
       <p class="mt-4"><i>Just for the evaluation team at Alegra...</i></p>
       <b-button variant="primary" @click="restartRace">Restart race</b-button>
     </div>
-    <InvoiceModal :seller="raceGrid[0]" />
+    <InvoiceModal v-if="!creatingInvoice" :seller="raceGrid[0]" />
   </div>
 </template>
 
