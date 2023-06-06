@@ -8,6 +8,8 @@ The goal was to build a web app that simulates a photo competition between diffe
 
 ## Build Setup
 
+Use Node 14.19.2
+
 ```bash
 # install dependencies
 $ npm install
