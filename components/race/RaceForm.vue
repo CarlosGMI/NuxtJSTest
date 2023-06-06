@@ -4,7 +4,7 @@
       <b-col sm="5">
         <b-form-input
           v-model="searchTerm"
-          placeholder="Escribe una palabra"
+          placeholder="Write a word"
         ></b-form-input>
       </b-col>
       <b-col sm="2" class="text-center text-sm-left mt-3 mt-sm-0">
@@ -12,7 +12,7 @@
           variant="primary"
           @click="searchImages"
           :disabled="isRaceFinished"
-          >¿Qué hay?</b-button
+          >What's Up?</b-button
         >
       </b-col>
     </b-row>
@@ -52,12 +52,7 @@ export default {
      */
     searchImages() {
       if (this.isBlankOrEmptyString(this.searchTerm)) {
-        this.makeToast(
-          this,
-          'warning',
-          'Error',
-          'Por favor introduzca una palabra'
-        );
+        this.makeToast(this, 'warning', 'Error', 'Please type a search term');
       } else {
         this.fetchResults({ searchTerm: this.searchTerm });
       }

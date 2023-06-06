@@ -12,9 +12,9 @@
               <b>{{ index + 1 }}. {{ seller.name }}</b>
             </p>
             <b-img src="~/assets/images/formula-1-cropped.png" />
-            <p class="my-2"><b>Puntos: </b>{{ seller.points }}</p>
+            <p class="my-2"><b>Current points: </b>{{ seller.points }}</p>
             <p>
-              <b>Puntos para ganar: </b
+              <b>Points left to win: </b
               >{{ showRemainingPoints(seller.pointsToWin) }}
             </p>
           </div>
@@ -74,5 +74,4 @@ export default {
 };
 </script>
 
-<style lang="scss" src="component_styles/race/statistics.scss">
-</style>
+<style lang="scss" src="component_styles/race/statistics.scss"></style>

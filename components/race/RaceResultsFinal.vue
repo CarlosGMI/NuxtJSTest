@@ -1,11 +1,11 @@
 <template>
   <div class="race-finished-results text-center">
-    <h2 class="mb-4">La carrera ha terminado</h2>
-    <h3><b>Ganador: </b>{{ raceGrid[0].name }}</h3>
-    <h3><b>Puntos: </b>{{ raceGrid[0].points }}</h3>
+    <h2 class="mb-4">Race has ended</h2>
+    <h3><b>Winner: </b>{{ raceGrid[0].name }}</h3>
+    <h3><b>Points: </b>{{ raceGrid[0].points }}</h3>
     <div class="invoice-wrapper text-center">
       <div class="invoice__loading" v-if="creatingInvoice">
-        <p>Creando factura...</p>
+        <p>Creating invoice...</p>
         <b-spinner variant="primary" label="Loading"></b-spinner>
       </div>
       <b-button
@@ -13,9 +13,9 @@
         variant="primary"
         v-b-modal="'invoice-modal'"
         v-else
-        >Ver factura</b-button
+        >See invoice</b-button
       >
-      <p class="mt-4"><i>Just for the evaluation team at Alegra...</i></p>
+      <p class="mt-4"><i>Just for testing...</i></p>
       <b-button variant="primary" @click="restartRace">Restart race</b-button>
     </div>
     <InvoiceModal v-if="!creatingInvoice" :seller="raceGrid[0]" />
@@ -47,7 +47,7 @@ export default {
      * Restart the web app (JUST FOR DEVELOPMENT AND EVALUATION PROCESS FROM THE ALEGRA TEAM).
      */
     restartRace() {
-      // I know this is ugly but is only a feature to restart the race and only for development and evaluation purposes
+      // I know this is ugly but is only a feature to restart the race and only for development and test purposes
       localStorage.clear();
       location.reload();
     },
@@ -55,5 +55,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

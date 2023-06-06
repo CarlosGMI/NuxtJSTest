@@ -52,13 +52,12 @@ export default {
       this.makeToast(
         this,
         'success',
-        '¡Muchísimas gracias!',
-        'Con tu ayuda la carrera ha finalizado y ya tenemos un ganador'
+        'Thank you very much!',
+        'The race has finished and we have a winner'
       );
     },
   },
 };
 </script>
 
-<style lang="scss" src="page_styles/index.scss">
-</style>
+<style lang="scss" src="page_styles/index.scss"></style>

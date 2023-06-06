@@ -3,41 +3,38 @@
     class="p-0"
     id="instructions-modal"
     :hide-footer="true"
-    title="Instrucciones"
+    title="Instructions"
     :static="true"
     :lazy="true"
   >
-    <h4 class="mb-3">¡Bienvenido!</h4>
+    <h4 class="mb-3">Welcome!</h4>
     <p>
-      En Imagenes Del Mundo nos caracterizamos por la excelencia de nuestras
-      fotografías y, como somos un poco competitivos 😉, nos hemos enfocado en
-      buscar cuál de todos nuestros vendedores es el que tiene mejores
-      fotografías.
+      At Imagenes Del Mundo we are known for the excellence of our photographs
+      and as we are a bit competitive 😉, we have focused on which of our
+      vendors has the best ones.
     </p>
     <p>
-      Para ello necesitamos de <span class="highlight">tu ayuda</span> y lo
-      único que tienes que hacer es seguir estos sencillos pasos:
+      We need <span class="highlight">your help</span> for that and you need to
+      follow these steps:
     </p>
     <ol>
-      <li>Introduce en el campo de texto una palabra que desees buscar.</li>
-      <li>Haz click sobre el botón de "¿Qué hay?"</li>
+      <li>In the search input, type a term or a word you want to search</li>
+      <li>Click the "What's up" button</li>
       <li>
-        Cuando puedas ver los resultados, haz click sobre la imagen que más te
-        guste y presiona el botón de "Me encanta".
+        When the results are presented to you, click on the image you like the
+        most and click on the "Vote" button
       </li>
     </ol>
     <p>
-      <span class="highlight">¡Y listo!</span> Habrás dado 3 puntos al vendedor
-      del cual seleccionaste la imagen, sin embargo es un proceso que puedes
-      repetir hasta que consigas que algún vendedor alcance los 20 puntos.
-      Cuando lo hagas, harás que el vendedor pueda crear una factura en Alegra
-      que ¡hasta tú podrás ver!
+      <span class="highlight">That's it!</span> You gave 3 points to the seller
+      you chose the photo from. However, this is a process that you can repeat
+      until a seller gets 20 points. When you do, you will be able to create an
+      invoice for that seller in Alegra and you will be able to see it!
     </p>
     <p>
       <i
         ><span class="highlight"
-          >¡Tu ayuda es valiosa y juntos podemos hacer de este mundo un lugar
-          más fotogénico!</span
+          >We love your help and we thank you for that!</span
         ></i
       >
     </p>

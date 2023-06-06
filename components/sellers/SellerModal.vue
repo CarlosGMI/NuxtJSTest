@@ -50,8 +50,8 @@ export default {
       this.makeToast(
         this,
         'success',
-        '¡Muchas gracias!',
-        `Su voto a ${sellerName} ha sido procesado con éxito`
+        'Thank you!',
+        `Your vote to ${sellerName} has been submitted`
       );
     },
   },
@@ -60,5 +60,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

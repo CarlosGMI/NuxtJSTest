@@ -2,14 +2,14 @@
   <b-modal
     class="invoice-modal"
     id="invoice-modal"
-    :title="`Factura de ${seller.name}`"
+    :title="`${seller.name}'s Invoice`"
     size="xl"
     hide-footer
   >
     <h3 class="text-center">{{ seller.name }}</h3>
-    <p><b>Fecha de creación: </b>{{ invoice.date }}</p>
-    <p><b>Fecha de expiración: </b>{{ invoice.dueDate }}</p>
-    <p><b>Cliente: </b>{{ invoice.client.name }}</p>
+    <p><b>Creation Date: </b>{{ invoice.date }}</p>
+    <p><b>Expiration Date: </b>{{ invoice.dueDate }}</p>
+    <p><b>Customer: </b>{{ invoice.client.name }}</p>
     <b-table hover :items="invoice.items" :fields="fields"></b-table>
   </b-modal>
 </template>
@@ -30,15 +30,15 @@ export default {
       fields: [
         {
           key: 'name',
-          label: 'Nombre',
+          label: 'Name',
         },
         {
           key: 'price',
-          label: 'Precio',
+          label: 'Price',
         },
         {
           key: 'quantity',
-          label: 'Cantidad (puntos acumulados)',
+          label: 'Quantity (points in total)',
         },
       ],
     };
@@ -54,5 +54,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

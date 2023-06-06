@@ -16,7 +16,7 @@
               v-b-modal.instructions-modal
               class="text-uppercase font-main-gray"
             >
-              Intrucciones
+              How to use
             </li>
           </ul>
         </b-col>
