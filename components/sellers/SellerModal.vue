@@ -12,7 +12,7 @@
         variant="primary"
         size="lg"
         @click="vote(seller.id, seller.name)"
-        >Votar</b-button
+        >Vote</b-button
       >
     </div>
     <div class="seller-modal-img text-center">
