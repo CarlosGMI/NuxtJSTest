@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <p>Buscando imágenes...</p>
+    <p>Searching photos...</p>
     <b-spinner variant="primary" label="Loading"></b-spinner>
   </div>
 </template>
@@ -17,5 +17,4 @@
 export default {};
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>
